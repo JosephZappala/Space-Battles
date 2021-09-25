@@ -6,14 +6,14 @@ public class Planet {
 
     public Planet() {
         this.size = 5;
-        this.popCount = this.size * 2;
+        this.popCount = this.size * 5;
         this.popMap = new int[5][5];
         this.moons = new Moon[1];
     }
 
     public Planet(int n, int moons) {
         this.size = n;
-        this.popCount = this.size * 2;
+        this.popCount = this.size * this.size;
         this.popMap = new int[size][size];
         this.moons = new Moon[moons];
         for (int i = 0; i < moons; i++){
@@ -89,7 +89,7 @@ public class Planet {
                     this.popMap[i][j] = count;
                     break;
                 }
-                int big = (int) (Math.random() * 10);
+                int big = (int) (Math.random() * 10000);
 
                 if (big % 2 == 0) {
                     if (big % rowTotal > count)
@@ -98,7 +98,7 @@ public class Planet {
                         this.popMap[i][j] = (big % rowTotal);
                         count -= (big % rowTotal);
                     }
-                } else
+                } else if (big % 2 == 0) 
                     this.popMap[i][j] = 0;
             }
         }
