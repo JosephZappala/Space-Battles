@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class GameClient {
     // input IP number of servers machine
-    String hostIp = "172.24.198.139";
+    String hostIp = "___.___.___.___";
     public void send(int player) {
         try {
             int serverPort = 5000;
